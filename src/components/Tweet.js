@@ -1,34 +1,27 @@
+import Actions from "./Actions";
 import ProfileImage from "./ProfileImage";
 import User from "./User";
+import Message from "./Message";
+import Timestamp from "./Timestamp";
 
-function Tweet({ tweet, userData }) {
+const Tweet = (props) => {
   return (
     <div className="tweet">
-      <ProfileImage image={tweet.user.image} />
+      <ProfileImage image={props.tweet.user.image} />
 
       <div className="body">
         <div className="top">
-          <User userData={tweet.user.name} />
-          <span className="timestamp">Nov 30, 2020</span>
+          <User user={props.tweet.user} />
+          <Timestamp timestamp={props.tweet.timestamp} />
         </div>
 
-        <p className="message">
-          On December 7th, we will be hosting a #webinar that will introduce you
-          to #SQL! Are you ready? 🚀
-        </p>
-
-        <div className="actions">
-          {/* Font Awesome icons */}
-          <i className="far fa-comment"></i>
-          <i className="fas fa-retweet"></i>
-          <i className="far fa-heart"></i>
-          <i className="fas fa-share"></i>
-        </div>
+        <Message message={props.tweet.message} />
+        <Actions />
       </div>
 
-      <i className="fas fa-ellipsis-h"></i>
+      <i class="fas fa-ellipsis-h"></i>
     </div>
   );
-}
+};
 
 export default Tweet;

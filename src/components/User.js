@@ -1,9 +1,21 @@
-function User(userData) {
-  return;
-  <span className="user">
-    <span className="name"> {userData.name} </span>
-    <span className="handle">@ USER_HANDLE</span>
-  </span>;
-}
+// function User(props) {
+//   return (
+//     <span className="user">
+//       <span className="name">{props.user.name}</span>
+//       <span className="handle">@{props.user.handle}</span>
+//     </span>
+//   );
+// }
+
+// export default User;
+
+const User = (props) => {
+  return (
+    <span className="user">
+      <span className="name">{props.user.name}</span>
+      <span className="name">@{props.user.handle}</span>
+    </span>
+  );
+};
 
 export default User;
